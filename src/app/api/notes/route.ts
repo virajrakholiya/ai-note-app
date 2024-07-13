@@ -96,7 +96,7 @@ export async function DELETE(req: NextRequest) {
     if (!userId || userId !== note.userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    await prisma.note.delete({where:{id}})
+    await prisma.note.delete({ where: { id } });
 
     return NextResponse.json({ message: "Note Detele" }, { status: 200 });
   } catch (error) {
